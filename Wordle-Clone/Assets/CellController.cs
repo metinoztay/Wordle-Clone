@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,6 @@ public class CellController : MonoBehaviour
     [SerializeField] private Color colorExist;
     [SerializeField] private Color colorFail;
     [SerializeField] private Color colorNone;
-
 
     [SerializeField] private Image background;
     [SerializeField] private TextMeshProUGUI text;
@@ -30,18 +29,17 @@ public class CellController : MonoBehaviour
         return state switch
         {
             State.None => colorNone,
-            State.Exist => colorExist,
-            State.Fail => colorFail,
+            State.Contain => colorExist,
             State.Correct => colorCorrect,
+            State.Fail => colorFail,
         };
     }
-
 }
 
 public enum State
 {
     None,
-    Exist,
+    Contain,
     Correct,
     Fail
 }
